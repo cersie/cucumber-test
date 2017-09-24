@@ -40,6 +40,26 @@ public class APITest {
             body("name", equalTo("Neetu"));
     }
 
+    @Test
+    public void verifyUpdateUser() {
+        String user = "{ \"name\": \"Neetu\", \"job\": \"leader\" }" ;
+        given().contentType("application/json").body(user).
+        when().
+            put("/api/users/2").
+        then().
+            statusCode(200).
+            body("name", equalTo("Neetu"));
+    }
+
+    @Test
+    public void verifyDeleteUser() {
+        given().
+        when().
+            delete("/api/users/2").
+        then().
+            statusCode(204);
+    }
+
 
 }
   
