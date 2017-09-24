@@ -19,7 +19,13 @@ public class APITest {
 
     @Test
     public void verifyListUsers() {
-        given().when().get("/api/users").then().body("page", equalTo(1));
+        given().
+        when().
+            get("/api/users").
+        then().
+            body("page", equalTo(1)).
+            body("data.id", hasItems(1,2,3)).
+            statusCode(200);
     }
 }
   

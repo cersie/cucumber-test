@@ -24,3 +24,8 @@ if you want to execute it on windows then change the driver path as following in
 ```
 System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
 ```
+
+Run API tests using following command.
+````
+./gradlew clean test
+````
