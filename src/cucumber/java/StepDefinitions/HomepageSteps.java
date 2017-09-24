@@ -69,7 +69,7 @@ public class HomepageSteps extends Base {
     }
 
     @Then("^I Verify product '(.*)' has been added in the cart$")
-    public void CheckText(String product) throws InterruptedException {
+    public void VerifyProduct(String product) throws InterruptedException {
         CheckText("div._3vIvU_ a",product);
     }
 }
