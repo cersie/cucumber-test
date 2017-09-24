@@ -27,5 +27,19 @@ public class APITest {
             body("data.id", hasItems(1,2,3)).
             statusCode(200);
     }
+
+    @Test
+    public void verifyCreateUser() {
+        // System.out.println("test");
+        String user = "{ \"name\": \"Neetu\", \"job\": \"leader\" }" ;
+        given().contentType("application/json").body(user).
+        when().
+            post("/api/users").
+        then().
+            statusCode(201).
+            body("name", equalTo("Neetu"));
+    }
+
+
 }
   
